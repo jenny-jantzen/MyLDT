@@ -5,131 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LDT Portfolio & Reflection</title>
     <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-primary: #212529;
-            --text-secondary: #495057;
-            --accent-color: #2b6cb0;
-            --border-color: #e2e8f0;
-            --btn-hover: #edf2f7;
-        }
+    :root {
+        --bg-color: #fffdf5;         /* Soft warm off-white background */
+        --card-bg: #ffffff;
+        --text-primary: #333333;     /* Dark charcoal for readability against yellow */
+        --text-secondary: #555555;
+        --accent-color: #d4a373;     /* Warm golden mustard (dark enough for headers/links to be readable) */
+        --pastel-yellow: #fefae0;    /* Soft pastel yellow for buttons & highlights */
+        --border-color: #faedcd;    /* Subtle soft yellow border */
+        --btn-hover: #faedcd;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 2rem 1rem;
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        margin: 0;
+        padding: 2rem 1rem;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border-color);
-        }
+    header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--border-color);
+    }
 
-        h1 {
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-        }
+    h1 {
+        color: #b5838d; /* Complementary soft rose/mauve for title contrast */
+        margin-bottom: 0.5rem;
+    }
 
-        /* Filter Controls */
-        .filter-container {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
+    /* Filter Controls */
+    .filter-container {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
 
-        .filter-btn {
-            background-color: var(--card-bg);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
+    .filter-btn {
+        background-color: var(--pastel-yellow);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
 
-        .filter-btn:hover {
-            background-color: var(--btn-hover);
-            color: var(--accent-color);
-        }
+    .filter-btn:hover {
+        background-color: var(--btn-hover);
+        color: var(--text-primary);
+    }
 
-        .filter-btn.active {
-            background-color: var(--accent-color);
-            color: #ffffff;
-            border-color: var(--accent-color);
-        }
+    .filter-btn.active {
+        background-color: #e9edc9; /* Soft pastel sage green for active selected filter */
+        color: #333333;
+        border-color: #ccd5ae;
+    }
 
-        /* Grid & Cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
+    /* Grid & Cards */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
 
-        .card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+    .card {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 12px rgba(212, 163, 115, 0.08);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-        .card.full-width {
-            grid-column: 1 / -1;
-        }
+    .card.full-width {
+        grid-column: 1 / -1;
+    }
 
-        .card.hidden {
-            display: none;
-        }
+    .card.hidden {
+        display: none;
+    }
 
-        .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
+    .tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #d4a373;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
 
-        h2 {
-            font-size: 1.25rem;
-            color: var(--accent-color);
-            margin-top: 0;
-            margin-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
+    h2 {
+        font-size: 1.25rem;
+        color: #b5838d;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+    }
 
-        p, ul {
-            margin: 0;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
+    p, ul {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+    }
 
-        ul {
-            padding-left: 1.2rem;
-        }
+    ul {
+        padding-left: 1.2rem;
+    }
 
-        li {
-            margin-bottom: 0.5rem;
-        }
-    </style>
+    li {
+        margin-bottom: 0.5rem;
+    }
+</style>
 </head>
 <body>
 
