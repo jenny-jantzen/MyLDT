@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LDT Portfolio & Reflection</title>
-    <style>
+  <style>
     :root {
         --bg-color: #fffdf5;         /* Soft warm off-white background */
         --card-bg: #ffffff;
-        --text-primary: #333333;     /* Dark charcoal for readability against yellow */
-        --text-secondary: #555555;
-        --accent-color: #d4a373;     /* Warm golden mustard (dark enough for headers/links to be readable) */
-        --pastel-yellow: #fefae0;    /* Soft pastel yellow for buttons & highlights */
-        --border-color: #faedcd;    /* Subtle soft yellow border */
-        --btn-hover: #faedcd;
+        --text-primary: #2d3748;     /* Dark slate gray for strong contrast and readability */
+        --text-secondary: #4a5568;   /* Medium slate gray for secondary body text */
+        --accent-gold: #c68a4c;      /* Slightly deeper golden mustard for tags */
+        --sage-dark: #3b5e43;        /* Deep sage green (exceeds 4.5:1 WCAG contrast ratio for headers) */
+        --sage-active: #587b5f;      /* Muted forest sage for active button state */
+        --pastel-yellow: #fefae0;    /* Soft pastel yellow for filter buttons */
+        --border-color: #e6e5cf;     /* Warm, subtle border */
+        --btn-hover: #f7eea9;
     }
 
     body {
@@ -38,7 +40,7 @@
     }
 
     h1 {
-        color: #b5838d; /* Complementary soft rose/mauve for title contrast */
+        color: var(--sage-dark); /* Deep accessible sage green */
         margin-bottom: 0.5rem;
     }
 
@@ -69,9 +71,9 @@
     }
 
     .filter-btn.active {
-        background-color: #e9edc9; /* Soft pastel sage green for active selected filter */
-        color: #333333;
-        border-color: #ccd5ae;
+        background-color: var(--sage-active); /* Sage green active pill */
+        color: #ffffff;                       /* High-contrast white text */
+        border-color: var(--sage-active);
     }
 
     /* Grid & Cards */
@@ -86,7 +88,7 @@
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid var(--border-color);
-        box-shadow: 0 4px 12px rgba(212, 163, 115, 0.08);
+        box-shadow: 0 4px 12px rgba(198, 138, 76, 0.08);
         transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
@@ -103,14 +105,14 @@
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        color: #d4a373;
+        color: var(--accent-gold);
         font-weight: 700;
         margin-bottom: 0.5rem;
     }
 
     h2 {
         font-size: 1.25rem;
-        color: #b5838d;
+        color: var(--sage-dark); /* Deep accessible sage green */
         margin-top: 0;
         margin-bottom: 0.75rem;
         border-bottom: 1px solid var(--border-color);
